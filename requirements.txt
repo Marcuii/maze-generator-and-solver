@@ -1,0 +1,4 @@
+# Maze Generator and Solver - Python Dependencies
+
+# Image processing for exporting solved mazes as PNG
+Pillow>=9.0.0
