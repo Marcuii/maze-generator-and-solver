@@ -23,6 +23,14 @@ class StyleManager:
         """
         self.colors = colors
         self.style = ttk.Style()
+        
+        # Use 'clam' theme across all platforms for consistent custom styling
+        # Default Windows themes often ignore background color settings
+        try:
+            self.style.theme_use('clam')
+        except Exception:
+            # Fallback to default if clam is not available
+            pass
     
     def configure_all(self) -> None:
         """Configure all widget styles for the application."""
