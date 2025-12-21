@@ -25,7 +25,6 @@ class EnhancedMazeGUI:
         """Initialize the GUI"""
         self.window = tk.Tk()
         self.window.title("🎯 Maze Explorer")
-        self.window.attributes('-zoomed', True)
         self.window.configure(bg=Theme.UI_COLORS['bg_primary'])
         
         # Use theme colors
@@ -548,4 +547,7 @@ class EnhancedMazeGUI:
     
     def run(self):
         """Run the main event loop"""
+        # Maximize window after all widgets are initialized
+        self.window.update_idletasks()
+        self.window.attributes('-zoomed', True)
         self.window.mainloop()

@@ -40,7 +40,7 @@ class Theme:
     }
     
     # Font configurations (family, size, weight)
-    FONTS: Dict[str, Tuple[str, int, ...]] = {
+    FONTS: Dict[str, Tuple[str, int, str]] = {
         'title': ('Arial', 32, 'bold'),
         'subtitle': ('Arial', 11),
         'header': ('Arial', 20, 'bold'),
