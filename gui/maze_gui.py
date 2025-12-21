@@ -549,5 +549,13 @@ class EnhancedMazeGUI:
         """Run the main event loop"""
         # Maximize window after all widgets are initialized
         self.window.update_idletasks()
-        self.window.attributes('-zoomed', True)
+        try:
+            # Windows
+            self.window.state('zoomed')
+        except tk.TclError:
+            try:
+                # Linux
+                self.window.attributes('-zoomed', True)
+            except tk.TclError:
+                pass
         self.window.mainloop()
