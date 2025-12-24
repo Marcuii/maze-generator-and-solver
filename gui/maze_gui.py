@@ -11,6 +11,7 @@ from pathfinding.bfs import BFS
 from pathfinding.dfs import DFS
 from pathfinding.dijkstra import Dijkstra
 from pathfinding.a_star import AStar
+from pathfinding.greedy_best_first import GreedyBestFirst
 
 from gui.theme import Theme
 from gui.dialogs import ThemedDialog
@@ -299,7 +300,8 @@ class EnhancedMazeGUI:
             ("📊  BFS", self.run_bfs),
             ("🌲  DFS", self.run_dfs),
             ("🎯  Dijkstra", self.run_dijkstra),
-            ("⭐  A* Algorithm", self.run_a_star)
+            ("⭐  A* Algorithm", self.run_a_star),
+            ("🚀  Greedy Best-First", self.run_greedy_best_first)
         ]
         
         for text, command in algorithms:
@@ -484,6 +486,9 @@ class EnhancedMazeGUI:
     
     def run_a_star(self):
         self.run_algorithm(AStar, "A*")
+    
+    def run_greedy_best_first(self):
+        self.run_algorithm(GreedyBestFirst, "Greedy Best-First")
     
     # Maze operations
     def stop_animation(self):
