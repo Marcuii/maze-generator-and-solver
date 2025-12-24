@@ -7,25 +7,26 @@ A modern, interactive maze generator and pathfinding visualizer built with Pytho
 ### Maze Generation
 - **Random Maze Generation**: Creates unique mazes using randomized algorithms
 - **Customizable Size**: Generate mazes from 10×10 to 30×30 cells
-- **Guaranteed Solution**: Every maze has a valid path from start (green) to end (red)
+- **Guaranteed Solution**: Every maze has a valid path from start (cyan) to end (pink)
 - **Save/Load**: Save your favorite mazes and reload them later
 
 ### Pathfinding Algorithms
-Visualize and compare four classic pathfinding algorithms:
+Visualize and compare five powerful pathfinding algorithms:
 
 - **Breadth-First Search (BFS)**: Guarantees shortest path, explores level by level
 - **Depth-First Search (DFS)**: Memory efficient, explores deeply before backtracking
 - **Dijkstra's Algorithm**: Weighted shortest path with uniform cost
 - **A* (A-Star)**: Intelligent search using heuristics, optimal and efficient
+- **Greedy Best-First Search**: Fast heuristic-based search, doesn't guarantee shortest path
 
 ### Visualization
 - **Real-time Animation**: Watch algorithms explore the maze step-by-step
 - **Adjustable Speed**: Control animation speed from 1ms to 100ms per step
 - **Color-coded Visualization**:
-  - 🟢 **Green**: Start position
-  - 🔴 **Red**: End position
-  - 🔵 **Blue**: Cells being explored
-  - 🟡 **Yellow**: Final solution path
+  - � **Cyan** (#00f2c3): Start position
+  - 🟪 **Pink** (#ff6b9d): End position
+  - 🟨 **Yellow** (#ffd93d): Cells being explored
+  - 🟧 **Orange** (#ff9500): Final solution path
 - **Statistics Display**: View nodes explored, path length, and execution time
 - **Export Results**: Save solved mazes as high-quality PNG images
 
@@ -63,13 +64,13 @@ python main.py
 ### Generating a Maze
 1. Enter maze size (10-30) in the input box
 2. Click "Generate Maze" to create a random maze
-3. The green cell is the start, red cell is the end
+3. The cyan cell is the start, pink cell is the end
 
 ### Solving a Maze
 1. Select a pathfinding algorithm from the dropdown
 2. Adjust animation speed if desired (lower = faster)
 3. Click "Solve Maze" to visualize the algorithm
-4. Watch as it explores cells (blue) and finds the path (yellow)
+4. Watch as it explores cells (yellow) and finds the path (orange)
 5. View statistics: nodes explored, path length, and time taken
 
 ### Saving and Loading
@@ -91,11 +92,12 @@ maze-generator-and-solver/
 ├── maze/
 │   └── maze_generator.py   # Maze generation logic
 ├── pathfinding/
-│   ├── base_pathfinder.py  # Base class for algorithms
-│   ├── bfs.py              # Breadth-First Search
-│   ├── dfs.py              # Depth-First Search
-│   ├── dijkstra.py         # Dijkstra's Algorithm
-│   └── a_star.py           # A* Algorithm
+│   ├── base_pathfinder.py     # Base class for algorithms
+│   ├── bfs.py                 # Breadth-First Search
+│   ├── dfs.py                 # Depth-First Search
+│   ├── dijkstra.py            # Dijkstra's Algorithm
+│   ├── a_star.py              # A* Algorithm
+│   └── greedy_best_first.py   # Greedy Best-First Search
 └── gui/
     ├── maze_gui.py         # Main GUI application
     ├── theme.py            # Dark theme colors
@@ -112,6 +114,7 @@ maze-generator-and-solver/
 | **DFS** | ❌ No | Low | Fast | Maze solving |
 | **Dijkstra** | ✅ Yes | Medium | Good | Weighted graphs |
 | **A*** | ✅ Yes | Medium | Excellent | Goal-directed search |
+| **Greedy Best-First** | ❌ No | Low | Very Fast | Quick path finding |
 
 ## Configuration
 
@@ -167,7 +170,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Future Enhancements
 
-- [ ] Additional algorithms (Greedy Best-First, Bidirectional Search)
+- [ ] Additional algorithms (Bidirectional Search, Jump Point Search)
 - [ ] Custom start/end point selection
 - [ ] Maze editing capabilities
 - [ ] Multiple maze generation algorithms
