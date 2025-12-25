@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# Algorithm comparison test outputs
+algorithm_comparison/
+algrithm_comparisons/
+
 # C extensions
 *.so
 
